@@ -19,9 +19,9 @@ class InstaBot:
         driver.implicitly_wait(30)  
         time.sleep(getRandomTime())
         driver.find_element_by_xpath("//input[@name=\"username\"]")\
-            .send_keys('_gautambisht_11')
+            .send_keys('Your_Usename')
         driver.find_element_by_xpath("//input[@name=\"password\"]")\
-            .send_keys('e8c2cadf2148')
+            .send_keys('Your_password')
         time.sleep(getRandomTime())      
         driver.find_element_by_xpath('//button[@type="submit"]')\
             .click()
