@@ -1,3 +1,5 @@
+
+                 
 from selenium import webdriver
 import time
 from selenium.webdriver.common.keys import Keys
@@ -58,6 +60,11 @@ def getRandomTime():
         randTime = randint(3, 5)
         return randTime      
 InstaBot("your_usernmae", "your_password")   
+
+
+
+
+
 
 
 
