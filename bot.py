@@ -23,7 +23,7 @@ class InstaBot:
         driver.find_element_by_xpath("//input[@name=\"username\"]")\
             .send_keys('priyansh_gusain02')
         driver.find_element_by_xpath("//input[@name=\"password\"]")\
-            .send_keys('xKigX!8ptWXjU@?')
+            .send_keys('priyanshsneha21')
         time.sleep(getRandomTime())      
         driver.find_element_by_xpath('//button[@type="submit"]')\
             .click()
