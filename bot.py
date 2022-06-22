@@ -43,7 +43,11 @@ def follow1():
   x = 0
   while x <10000000000:
 
-    time.sleep(90)
+    time.sleep(15)
+    driver.refresh()
+    time.sleep(15)
+    driver.get('https://instagram.com')
+    time.sleep(7)
     driver.implicitly_wait(30)
     print('searching')
     b = driver.find_element_by_xpath('''//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/input''')
