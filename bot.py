@@ -22,60 +22,58 @@ def getRandomTime():
         randTime = randint(5, 10)
         return randTime  
 def getrandomname():
-         randTime = ['viratkohli', 'narendramodi', 'cristiano', 'instagram', 'kyliejenner', 'leomessi', 'selenagomez', 'therock']
+         randTime = ['viratkohli', 'narendramodi', 'cristiano', 'instagram', 'leomessi', 'selenagomez', 'therock']
          a = random.choice(randTime)
          return a
 def login():
         driver.implicitly_wait(30)
-        driver.get("https://instagram.com")    
-        driver.implicitly_wait(30)  
+        a12 = driver.get("https://instagram.com/")    
+        driver.implicitly_wait(30)        
         time.sleep(getRandomTime())
-        driver.find_element_by_xpath("//input[@name=\"username\"]")\
-            .send_keys('_gautambisht_11')
+        a = driver.find_element_by_xpath('''//*[@id="loginForm"]/div/div[1]/div/label/input''')
+        a.send_keys('_gautambisht_11')
         driver.find_element_by_xpath("//input[@name=\"password\"]")\
             .send_keys('e8c2cadf2147')
         time.sleep(getRandomTime())      
         driver.find_element_by_xpath('//button[@type="submit"]')\
             .click()
         print('Succesfully logined')
+
+        time.sleep(6)
+
+
+        #driver.get(f'''https://www.instagram.com/instagram/''')
         return
 def follow1():
-  x = 0
-  while x <10000000000:
-
-    time.sleep(15)
-    driver.refresh()
-    time.sleep(15)
-    driver.get('https://instagram.com')
-    time.sleep(7)
+ 
+    driver.get(f"https://instagram.com/{getrandomname()}")
+    time.sleep(10)
     driver.implicitly_wait(30)
-    print('searching')
-    b = driver.find_element_by_xpath('''//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/input''')
-    driver.implicitly_wait(30)
-    b.send_keys(getrandomname())
-    time.sleep(getRandomTime())
-    count = 0
-    while count <2:
-        b.send_keys(Keys.ENTER)
-        count +=1 # count = count +1
-        time.sleep(getRandomTime())
-    try:
+    try: 
        driver.implicitly_wait(30)
-       follow = driver.find_element_by_xpath('''//*[@id="mount_0_0_w5"]/div/div[1]/div/div[1]/div/div/div[1]/div[1]/section/main/div/header/section/div[1]/div[2]/div/div[2]/div/span/span[1]/button''')
+       follow=driver.find_element_by_xpath("//*[text()='Follow']")
        follow.click()
        print('Followed')
        time.sleeep(1210)
     except:
-          driver.implicitly_wait(30)
-          unfollow1 = driver.find_element_by_xpath('''//*[@id="react-root"]/section/main/div/header/section/div[1]/div[2]/div/div[2]/div/span/span[1]/button''')
-          unfollow1.click()
-          time.sleep(getRandomTime())
-          unfollow2 = driver.find_element_by_xpath('''/html/body/div[6]/div/div/div/div[3]/button[1]''')
-          unfollow2.click()
-          print('Unfollowed')
-          time.sleep(getRandomTime())
-    x +=1
+        pass
+          # div = driver.find_element_by_xpath("//*[@id='react-root']/section/main/div/header/section/div[1]")
+          # button = div.find_elements_by_xpath(".//button")
+          # if (button and button[0].text != "Follow"):
+          #     if (len(button) > 2):
+          #         button[1].click()
+          #     else:
+          #         button[0].click()
+          #         time.sleep(2)
+          #         driver.find_element_by_xpath("/html/body/div[5]/div/div/div/div[3]/button[1]").click()      
+    driver.implicitly_wait(30)
+    button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
+    button.click()
+    time.sleep(2)
+    driver.find_element_by_xpath("//*[text()='Unfollow']").click()
+    time.sleep(getRandomTime())
+
 login()
 while True:    
-
+    
     follow1()
