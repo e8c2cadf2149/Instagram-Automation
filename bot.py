@@ -65,7 +65,7 @@ def follow1():
           #     else:
           #         button[0].click()
           #         time.sleep(2)
-    time.sleeep(1210)      #         driver.find_element_by_xpath("/html/body/div[5]/div/div/div/div[3]/button[1]").click()      
+    time.sleep(1210)      #         driver.find_element_by_xpath("/html/body/div[5]/div/div/div/div[3]/button[1]").click()      
     driver.implicitly_wait(30)
     button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
     button.click()
