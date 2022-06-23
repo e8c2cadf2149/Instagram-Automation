@@ -39,7 +39,7 @@ def login():
             .click()
         print('Succesfully logined')
 
-        time.sleep(6)
+        time.sleep(60)
 
 
         #driver.get(f'''https://www.instagram.com/instagram/''')
