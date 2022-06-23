@@ -54,7 +54,7 @@ def follow1():
        follow=driver.find_element_by_xpath("//*[text()='Follow']")
        follow.click()
        print('Followed')
-       time.sleeep(1210)
+       
     except:
         pass
           # div = driver.find_element_by_xpath("//*[@id='react-root']/section/main/div/header/section/div[1]")
@@ -65,7 +65,7 @@ def follow1():
           #     else:
           #         button[0].click()
           #         time.sleep(2)
-          #         driver.find_element_by_xpath("/html/body/div[5]/div/div/div/div[3]/button[1]").click()      
+    time.sleeep(1210)      #         driver.find_element_by_xpath("/html/body/div[5]/div/div/div/div[3]/button[1]").click()      
     driver.implicitly_wait(30)
     button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
     button.click()
