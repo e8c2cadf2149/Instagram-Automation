@@ -18,11 +18,18 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 #driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
+
 def getRandomTime():
         randTime = randint(5, 10)
         return randTime  
+def getRandomTime1():
+        randTime = randint(3, 5)
+        return randTime
+def getRandomTime2():
+        randTime = randint(1180,1190)
+        return randTime
 def getrandomname():
-         randTime = ['viratkohli', 'narendramodi', 'cristiano', 'instagram', 'leomessi', 'selenagomez', 'therock']
+         randTime = ['viratkohli', 'narendramodi', 'cristiano', 'instagram',  'selenagomez']
          a = random.choice(randTime)
          return a
 def login():
@@ -32,14 +39,16 @@ def login():
         time.sleep(getRandomTime())
         a = driver.find_element_by_xpath('''//*[@id="loginForm"]/div/div[1]/div/label/input''')
         a.send_keys('_gautambisht_11')
+        time.sleep(getRandomTime1())
         driver.find_element_by_xpath("//input[@name=\"password\"]")\
             .send_keys('e8c2cadf2147')
-        time.sleep(getRandomTime())      
+        time.sleep(getRandomTime1())     
         driver.find_element_by_xpath('//button[@type="submit"]')\
             .click()
         print('Succesfully logined')
 
         time.sleep(60)
+        driver.get("https://instagram.com/")
 
 
         #driver.get(f'''https://www.instagram.com/instagram/''')
@@ -51,42 +60,39 @@ def follow1():
     driver.implicitly_wait(30)
     try: 
        driver.implicitly_wait(30)
+       time.sleep(getRandomTime1())
        follow=driver.find_element_by_xpath("//*[text()='Follow']")
+       time.sleep(getRandomTime1())
        follow.click()
        print('Followed')
-       
+       driver.refresh()
+       time.sleeep(20)
     except:
-
-           button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
-           button.click()
-           time.sleep(2)
-           driver.find_element_by_xpath("//*[text()='Unfollow']").click()
-           time.sleep(getRandomTime())
-          # div = driver.find_element_by_xpath("//*[@id='react-root']/section/main/div/header/section/div[1]")
-          # button = div.find_elements_by_xpath(".//button")
-          # if (button and button[0].text != "Follow"):
-          #     if (len(button) > 2):
-          #         button[1].click()
-          #     else:
-          #         button[0].click()
-          #         time.sleep(2)
-     #         driver.find_element_by_xpath("/html/body/div[5]/div/div/div/div[3]/button[1]").click()      
+          driver.implicitly_wait(30)
+          button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
+          button.click()
+          time.sleep(getRandomTime1())
+          driver.find_element_by_xpath("//*[text()='Unfollow']").click()
+          time.sleep(getRandomTime())
+          driver.refresh()
     try:
-    
-    
-       time.sleep(1210)
-       button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
-       button.click()
-       time.sleep(2)
-       driver.find_element_by_xpath("//*[text()='Unfollow']").click()
-       time.sleep(getRandomTime())
+        driver.implicitly_wait(30)
+        button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
+        button.click()
+        time.sleep(getRandomTime1())
+        driver.find_element_by_xpath("//*[text()='Unfollow']").click()
+        time.sleep(getRandomTime())
+        driver.refresh()
     except:
            driver.implicitly_wait(30)
+           time.sleep(getRandomTime1())
            follow=driver.find_element_by_xpath("//*[text()='Follow']")
+           time.sleep(getRandomTime1())
            follow.click()
            print('Followed')
-
+           driver.refresh()
+           time.sleeep(20)
 login()
 while True:    
-    
     follow1()
+    time.sleep(getRandomTime2())
