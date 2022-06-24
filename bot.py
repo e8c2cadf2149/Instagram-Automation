@@ -48,10 +48,10 @@ def login():
         print('Succesfully logined')
 
         time.sleep(60)
-        driver.get("https://instagram.com/")
+        
 
 
-        #driver.get(f'''https://www.instagram.com/instagram/''')
+        
         return
 def follow1():
  
