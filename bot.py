@@ -54,6 +54,8 @@ def login():
         
         return
 def follow1():
+    driver.refresh()
+    time.sleep(4)
     driver.get(f"https://instagram.com/{getrandomname()}")
     time.sleep(10)
     driver.implicitly_wait(30)
@@ -73,22 +75,15 @@ def follow1():
           driver.find_element_by_xpath("//*[text()='Unfollow']").click()
           time.sleep(getRandomTime())
           driver.refresh()
-    try:
-        driver.implicitly_wait(30)
-        button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
-        button.click()
-        time.sleep(getRandomTime1())
-        driver.find_element_by_xpath("//*[text()='Unfollow']").click()
-        time.sleep(getRandomTime())
-        driver.refresh()
-    except:
-           driver.implicitly_wait(30)
-           time.sleep(getRandomTime1())
-           follow=driver.find_element_by_xpath("//*[text()='Follow']")
-           time.sleep(getRandomTime1())
-           follow.click()
-           driver.refresh()
-           time.sleeep(20)
+
+    driver.implicitly_wait(30)
+    button = driver.find_element_by_xpath("//button[@class='_abn9 _abnd _abni _abnn']")
+    button.click()
+    time.sleep(getRandomTime1())
+    driver.find_element_by_xpath("//*[text()='Unfollow']").click()
+    time.sleep(getRandomTime())
+    
+
 
     
 login()
