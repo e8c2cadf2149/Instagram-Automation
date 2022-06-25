@@ -54,7 +54,8 @@ def login():
         
         return
 def follow1():
- 
+    count = 1 
+    while count < 83:
     driver.get(f"https://instagram.com/{getrandomname()}")
     time.sleep(10)
     driver.implicitly_wait(30)
@@ -64,7 +65,6 @@ def follow1():
        follow=driver.find_element_by_xpath("//*[text()='Follow']")
        time.sleep(getRandomTime1())
        follow.click()
-       print('Followed')
        driver.refresh()
        time.sleeep(20)
     except:
@@ -89,10 +89,12 @@ def follow1():
            follow=driver.find_element_by_xpath("//*[text()='Follow']")
            time.sleep(getRandomTime1())
            follow.click()
-           print('Followed')
            driver.refresh()
            time.sleeep(20)
+    count+=1
+    if count == 83:
+        time.sleep(81005)
+    
 login()
 while True:    
     follow1()
-    time.sleep(getRandomTime2())
