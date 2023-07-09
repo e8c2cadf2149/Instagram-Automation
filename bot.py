@@ -38,10 +38,10 @@ def login():
         driver.implicitly_wait(30)        
         time.sleep(getRandomTime())
         a = driver.find_element_by_xpath('''//*[@id="loginForm"]/div/div[1]/div/label/input''')
-        a.send_keys('_gautambisht_11')
+        a.send_keys('YOUR-USERNAME')
         time.sleep(getRandomTime1())
         driver.find_element_by_xpath("//input[@name=\"password\"]")\
-            .send_keys('e8c2cadf21345')
+            .send_keys('YOUR-PASSWORD')
         time.sleep(getRandomTime1())     
         driver.find_element_by_xpath('//button[@type="submit"]')\
             .click()
